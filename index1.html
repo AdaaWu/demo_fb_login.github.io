@@ -5,7 +5,7 @@
 </head>
 <body>
     <div>
-        Facebook登入並取得用戶姓名、email：：：<input type="button" value="Facebook登入" onclick="FBLogin();" />
+        Facebook登入並取得用戶姓名、email：<input type="button" value="Facebook登入" onclick="FBLogin();" />
     </div>
     <div>
         <!--留意用戶的此頁，你的App會被移除：https://www.facebook.com/settings?tab=applications-->
@@ -13,6 +13,8 @@
     </div>
     <!--顯示用戶的姓名、email↓-->
     <div id="content"></div>
+    <img src="/img/api_img.png" alt="">
+
     <script type="text/javascript">
         //應用程式編號，進入 https://developers.facebook.com/apps/ 即可看到
         let FB_appID = "你的應用程式編號";
@@ -88,6 +90,7 @@
 
                 console.log("使用者名稱");
                 console.log(user['last_name']);
+                
                 if (user.error) {
                     console.log(response);
                 } else {
@@ -134,5 +137,7 @@
              
         } 
     </script> 
+
+    
 </body>
 </html>
