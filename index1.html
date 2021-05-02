@@ -5,7 +5,7 @@
 </head>
 <body>
     <div>
-        Facebook登入並取得用戶姓名、email：<input type="button" value="Facebook登入" onclick="FBLogin();" />
+        Facebook登入並取得用戶姓名、email：：：<input type="button" value="Facebook登入" onclick="FBLogin();" />
     </div>
     <div>
         <!--留意用戶的此頁，你的App會被移除：https://www.facebook.com/settings?tab=applications-->
@@ -28,7 +28,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
-        
+
         window.fbAsyncInit = function () {
             FB.init({
         
@@ -63,6 +63,7 @@
                             console.log(`已授權App登入FB 的 userID:${userID}`);
                             GetProfile();
 
+
                         } else {
                             // user FB取消授權
                             alert("Facebook帳號無法登入");
@@ -84,6 +85,9 @@
             //取得用戶個資
             FB.api("/me", "GET", { fields: 'last_name,first_name,name,email' }, function (user) {
                 //user物件的欄位：https://developers.facebook.com/docs/graph-api/reference/user
+
+                console.log("使用者名稱");
+                console.log(user['last_name']);
                 if (user.error) {
                     console.log(response);
                 } else {
